@@ -7,38 +7,25 @@
 //
 
 $(document).ready(function() {"use strict";
-    $("nav a").click(function() {
-        $('nav p a').transition({x : '90px'});
-    });
+    function closePopUpMessage() {
+        $(".modalOverlay").transition({
+            opacity : 0 }).hide();
+            
+        $(".modalWindow").hide();           
+    }
     
-    function showPopUpMessage()
+    function showPopUpMessage() {
+        $(".modalOverlay").show().transition({
+            opacity : 0.4
+        }).click(function () { 
+            closePopUpMessage();
+        });
+        
+        $(".modalWindow").show();
+    }
+
+
+    $("nav a").click(function() {
+        showPopUpMessage();
+    });
 });
-
-
-
-//show the modal overlay and popup window
-function showPopUpMessage(msg) {
-  overlayElement = document.createElement("div");
-  overlayElement.className = 'modalOverlay';
-  modalWindowElement = document.createElement("div");
-  modalWindowElement.className = 'modalWindow';
-  modalWindowElement.innerHTML = msg;
-  modalWindowElement.style.left = (window.innerWidth - 200) / 2 + "px";
-  document.body.appendChild(overlayElement);
-  document.body.appendChild(modalWindowElement);
-  setTimeout(function() {
-    modalWindowElement.style.opacity = 1;
-    overlayElement.style.opacity = 0.4;
-    overlayElement.addEventListener("click", hidePopUpMessage, false);
-  }, 300);
-}
-//hide the modal overlay and popup window
-function hidePopUpMessage() {
-  modalWindowElement.style.opacity = 0;
-  overlayElement.style.opacity = 0;
-  overlayElement.removeEventListener("click", hidePopUpMessage, false);
-  setTimeout(function() {
-    document.body.removeChild(overlayElement);
-    document.body.removeChild(modalWindowElement);
-  }, 400);
-}

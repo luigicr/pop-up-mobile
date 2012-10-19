@@ -3,6 +3,7 @@ header {
 }
 
 .modalOverlay {
+    display: none;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -16,8 +17,10 @@ header {
 }
 
 .modalWindow {
+    display: none;
     position: fixed;
-    top: 150px;
+    top: 50px;
+    left: 20px;
     margin: 0;
     border: 2px solid #fff;
     width: 180px;
@@ -30,8 +33,11 @@ header {
     padding: 10px;
     z-index: 102;
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #EFEFEF), color-stop(2%, #EFEFEF), color-stop(100%, #DCEBDD));
+    background: -o-linear-gradient(top, #EFEFEF 0%, #EFEFEF 2%, #DCEBDD 100%);
     -webkit-border-radius: 8px;
+    border-radius: 8px;
     -webkit-box-shadow: -1px 2px 12px rgba(0, 0, 0, 0.91);
+    box-shadow: -1px 2px 12px rgba(0, 0, 0, 0.91);
 }
 
 .modalWindowHeader {
@@ -47,6 +53,7 @@ header {
     text-align: center;
     margin-bottom: 0px;
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8a8a8a), color-stop(2%, #6a6a6a), color-stop(100%, #151515));
+    background: -o-linear-gradient(top, #8a8a8a 0%, #6a6a6a 2%, #151515 100%);
 }
 
 .modalWindowContent {
