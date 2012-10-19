@@ -1,7 +1,7 @@
 # Hi Everyone! ☺
 
-## [This repo has moved!](https://github.com/h5bp/html5-boilerplate)
+## pop-up-mobile project
 
-# [HTML5 Boilerplate Github](https://github.com/h5bp/html5-boilerplate)
+Animated pop-up modal windows interactive for mobile web pages
 
-Thank youuu
+##  Created by luis.monge on 2012-10-18.
